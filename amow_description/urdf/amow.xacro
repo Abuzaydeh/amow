@@ -1,0 +1,390 @@
+<?xml version="1.0" ?>
+<robot name="amow" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find amow_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find amow_description)/urdf/amow.trans" />
+<xacro:include filename="$(find amow_description)/urdf/amow.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.00023137438094239429 0.0 0.3070178414739575" rpy="0 0 0"/>
+    <mass value="876.2402280918454"/>
+    <inertia ixx="27.778467" iyy="43.612873" izz="36.694342" ixy="-0.0" iyz="0.0" ixz="-0.049645"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_front_wheel_1">
+  <inertial>
+    <origin xyz="2.7755575615628914e-17 -0.03 2.7755575615628914e-17" rpy="0 0 0"/>
+    <mass value="1.3421472864758142"/>
+    <inertia ixx="0.002972" iyy="0.005138" izz="0.002972" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2 0.17 -0.0875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2 0.17 -0.0875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_back_wheel_1">
+  <inertial>
+    <origin xyz="-2.7755575615628914e-17 -0.03 2.7755575615628914e-17" rpy="0 0 0"/>
+    <mass value="1.3421472864758142"/>
+    <inertia ixx="0.002972" iyy="0.005138" izz="0.002972" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.2 0.17 -0.0875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.2 0.17 -0.0875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_front_wheel_1">
+  <inertial>
+    <origin xyz="2.7755575615628914e-17 0.03 2.7755575615628914e-17" rpy="0 0 0"/>
+    <mass value="1.3421472864758142"/>
+    <inertia ixx="0.002972" iyy="0.005138" izz="0.002972" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2 -0.17 -0.0875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2 -0.17 -0.0875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_back_wheel_1">
+  <inertial>
+    <origin xyz="-2.7755575615628914e-17 0.03 2.7755575615628914e-17" rpy="0 0 0"/>
+    <mass value="11.328877633156067"/>
+    <inertia ixx="0.025083" iyy="0.043368" izz="0.025083" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.2 -0.17 -0.0875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.2 -0.17 -0.0875" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bbase_1">
+  <inertial>
+    <origin xyz="-2.7755575615628914e-17 0.0026198613106947375 0.05013388123334572" rpy="0 0 0"/>
+    <mass value="3.1853238943739357"/>
+    <inertia ixx="0.005841" iyy="0.005381" izz="0.006055" ixy="-0.0" iyz="-2.6e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1 -0.0 -0.5625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/bbase_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1 -0.0 -0.5625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/bbase_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link1_1">
+  <inertial>
+    <origin xyz="3.418189307990982e-08 0.036794334251854036 0.183288328085229" rpy="0 0 0"/>
+    <mass value="4.033545334173836"/>
+    <inertia ixx="0.074267" iyy="0.073641" izz="0.002763" ixy="0.0" iyz="0.000314" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1 -0.07 -0.615738" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1 -0.07 -0.615738" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link2_1">
+  <inertial>
+    <origin xyz="3.16172757419686e-08 -0.053567297650269706 0.1362943004011924" rpy="0 0 0"/>
+    <mass value="3.567438458974954"/>
+    <inertia ixx="0.049307" iyy="0.048671" izz="0.002555" ixy="0.0" iyz="0.000326" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1 -0.060192 -0.968676" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1 -0.060192 -0.968676" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link3_1">
+  <inertial>
+    <origin xyz="0.0023393009508379248 0.04523259443657402 0.0024130586682105104" rpy="0 0 0"/>
+    <mass value="1.050315969436746"/>
+    <inertia ixx="0.001026" iyy="0.0008" izz="0.001064" ixy="-7e-06" iyz="-3e-06" ixz="6e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1 -0.04372 -1.267364" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1 -0.04372 -1.267364" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_1">
+  <inertial>
+    <origin xyz="1.304512053934559e-15 -1.4480590843080066e-07 0.017600617663721563" rpy="0 0 0"/>
+    <mass value="0.1525642910055436"/>
+    <inertia ixx="4.8e-05" iyy="6.1e-05" izz="5.4e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1 -0.09009 -1.312364" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/gripper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1 -0.09009 -1.312364" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/gripper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="finger1_1">
+  <inertial>
+    <origin xyz="-0.011999999999996055 0.031346884370935524 0.04435681864948826" rpy="0 0 0"/>
+    <mass value="0.41659455423848385"/>
+    <inertia ixx="0.000516" iyy="0.000432" izz="0.000124" ixy="0.0" iyz="-0.000145" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.112 -0.102635 -1.344344" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/finger1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.112 -0.102635 -1.344344" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/finger1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="finger2_1">
+  <inertial>
+    <origin xyz="0.012000000000003952 -0.03134717398275191 0.04435681864948826" rpy="0 0 0"/>
+    <mass value="0.4165945542384838"/>
+    <inertia ixx="0.000516" iyy="0.000432" izz="0.000124" ixy="0.0" iyz="0.000145" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.088 -0.077545 -1.344344" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/finger2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.088 -0.077545 -1.344344" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/finger2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_link_1">
+  <inertial>
+    <origin xyz="0.009999999999999981 7.919311523219008e-08 -2.609863281044511e-07" rpy="0 0 0"/>
+    <mass value="0.21724802079089342"/>
+    <inertia ixx="0.000124" iyy="1.7e-05" izz="0.000122" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.165 -0.091835 -1.267364" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/camera_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.165 -0.091835 -1.267364" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/camera_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-2.7755575615628914e-17 0.0 0.015000000000000124" rpy="0 0 0"/>
+    <mass value="0.22694865329532654"/>
+    <inertia ixx="4e-05" iyy="4e-05" izz="4.5e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.25 -0.0 -0.5525" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.25 -0.0 -0.5525" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://amow_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev1" type="continuous">
+  <origin xyz="0.2 -0.17 0.0875" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_front_wheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Rev2" type="continuous">
+  <origin xyz="-0.2 -0.17 0.0875" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_back_wheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Rev3" type="continuous">
+  <origin xyz="0.2 0.17 0.0875" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_front_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev4" type="continuous">
+  <origin xyz="-0.2 0.17 0.0875" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_back_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev5" type="continuous">
+  <origin xyz="0.1 0.0 0.5625" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bbase_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev6" type="continuous">
+  <origin xyz="0.0 0.07 0.053238" rpy="0 0 0"/>
+  <parent link="bbase_1"/>
+  <child link="link1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev7" type="continuous">
+  <origin xyz="0.0 -0.009808 0.352938" rpy="0 0 0"/>
+  <parent link="link1_1"/>
+  <child link="link2_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Rev8" type="continuous">
+  <origin xyz="0.0 -0.016472 0.298688" rpy="0 0 0"/>
+  <parent link="link2_1"/>
+  <child link="link3_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev9" type="continuous">
+  <origin xyz="0.0 0.04637 0.045" rpy="0 0 0"/>
+  <parent link="link3_1"/>
+  <child link="gripper_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev10" type="continuous">
+  <origin xyz="0.012 0.012545 0.03198" rpy="0 0 0"/>
+  <parent link="gripper_1"/>
+  <child link="finger1_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Rev11" type="continuous">
+  <origin xyz="-0.012 -0.012545 0.03198" rpy="0 0 0"/>
+  <parent link="gripper_1"/>
+  <child link="finger2_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Rigid12" type="fixed">
+  <origin xyz="0.065 0.048115 0.0" rpy="0 0 0"/>
+  <parent link="link3_1"/>
+  <child link="camera_link_1"/>
+</joint>
+
+<joint name="Rigid13" type="fixed">
+  <origin xyz="0.25 0.0 0.5525" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+</robot>
