@@ -386,5 +386,11 @@
   <parent link="base_link"/>
   <child link="lidar_1"/>
 </joint>
+  
+<gazebo>
+ <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/amow</robotNamespace>
+    </plugin>
+</gazebo>  
 
 </robot>
