@@ -1,0 +1,46 @@
+amow:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  arm_controller:
+    type: "position_controllers/JointTrajectoryController"
+    joints:
+      - Rev5
+      - Rev6
+      - Rev7
+      - Rev8
+      - Rev9
+
+    constraints:
+      goal_time: 0.6                   # Override default
+      stopped_velocity_tolerance: 0.05 # Override default
+      Rev1: { trajectory: 0.1 ,goal: 0.1 }
+      Rev2: { trajectory: 0.1 ,goal: 0.1 }
+      Rev3: { trajectory: 0.1 ,goal: 0.1 }
+      Rev4: { trajectory: 0.1 ,goal: 0.1 }
+      Rev5: { trajectory: 0.1 ,goal: 0.1 }
+    
+
+    state_publish_rate:  25            # Override default
+    action_monitor_rate: 30            # Override default
+    stop_trajectory_duration: 0        # Override default
+
+
+
+  gripper_controller:
+    type: "position_controllers/JointTrajectoryController"
+    joints:
+      - Rev10
+      - Rev11
+
+    constraints:
+      goal_time: 0.6                   # Override default
+      stopped_velocity_tolerance: 0.05 # Override default
+      Rev10: { trajectory: 0.1 ,goal: 0.1 }
+      Rev11: { trajectory: 0.1 ,goal: 0.1 }
+
+    state_publish_rate:  25            # Override default
+    action_monitor_rate: 30            # Override default
+    stop_trajectory_duration: 0        # Override default
